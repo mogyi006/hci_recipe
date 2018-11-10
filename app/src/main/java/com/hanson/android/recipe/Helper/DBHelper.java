@@ -46,6 +46,8 @@ public class DBHelper extends SQLiteOpenHelper
         db.execSQL("CREATE TABLE LIKECOUNT( _id INTEGER PRIMARY KEY AUTOINCREMENT, userID TEXT, recipeID INTEGER);");
 
         db.execSQL("CREATE TABLE USER( _id INTEGER PRIMARY KEY AUTOINCREMENT, userID TEXT, password TEXT);");
+
+        db.execSQL("CREATE TABLE SHOPPINGLIST( _id INTEGER PRIMARY KEY AUTOINCREMENT, ingreName TEXT, ingreM TEXT, ingreQ TEXT);");
     }
 
     @Override
@@ -146,6 +148,50 @@ public class DBHelper extends SQLiteOpenHelper
         } else{
             db.execSQL("INSERT INTO INGREDIENTS (_id, recipeID, ingreName) VALUES (null, " + recipeid + ", '" + ingreName + "');");
         }
+        db.close();
+    }
+
+
+    public  void  shoppinglist_Update(String ingreName, String ingreM, String ingreQ)
+    {
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT ingreName, ingreM, ingreQ FROM SHOPPINGLIST WHERE ingreName = '" + ingreName + "';", null);
+        if (cursor == null){
+            if(ingreQ != null){
+                db.execSQL("INSERT INTO SHOPPINGLIST ( _id , ingreName, ingreM, ingreQ) VALUES (null, " + ", '" + ingreName + "', '" + ingreM + "', '" + ingreQ + "');");
+            } else{
+                db.execSQL("INSERT INTO SHOPPINGLIST (_id, ingreName) VALUES (null, " + ", '" + ingreName + "');");
+            }
+        } else {
+            if (ingreQ == null){
+                while (cursor.moveToNext()) {
+                    if (cursor.getString(2) == null) {
+                        cursor.close();
+                        db.close();
+                        return;
+                    }
+                }
+                db.execSQL("INSERT INTO SHOPPINGLIST (_id, ingreName) VALUES (null, " + ", '" + ingreName + "');");
+            } else {
+                while (cursor.moveToNext()) {
+                    // TODO convert units and add quantities
+                    if (cursor.getString(1) == ingreQ) {
+                        String newingreQ = Double.toString(Double.parseDouble(cursor.getString(1) + Double.parseDouble(ingreQ)));
+                        db.execSQL("INSERT INTO SHOPPINGLIST ( _id , ingreName, ingreM, ingreQ) VALUES (null, " + ", '" + ingreName + "', '" + ingreM + "', '" + newingreQ + "');");
+                    } else {
+                        db.execSQL("INSERT INTO SHOPPINGLIST ( _id , ingreName, ingreM, ingreQ) VALUES (null, " + ", '" + ingreName + "', '" + ingreM + "', '" + ingreQ + "');");
+                    }
+                }
+            }
+        }
+        cursor.close();
+        db.close();
+    }
+
+    public void shoppinglist_Item_Delete(int _id)
+    {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM SHOPPINGLIST WHERE _id = " + _id + ";");
         db.close();
     }
 
