@@ -91,9 +91,9 @@ public class HomeFragment extends Fragment {
 
             int bibmbapId = dbHelper.recipes_GetIdByName("Bibimbap");
             ArrayList<String> bibmbapIngre = new ArrayList<>();
-            bibmbapIngre.add("rice");
+            bibmbapIngre.add("1 kg rice");
             bibmbapIngre.add("egg");
-            bibmbapIngre.add("sesame oil");
+            bibmbapIngre.add("1 tbs of sesame oil");
             bibmbapIngre.add("gochujang");
             bibmbapIngre.add("carrot");
 
@@ -117,7 +117,7 @@ public class HomeFragment extends Fragment {
                             "\t 1 tbs of toasted sesame seeds\n" +
                             "\t 2 chopped green onions\n" +
                             "\t 4 cloves of minced garlic\n" +
-                            "\t ½ ts of black pepper.\n" +
+                            "\t 0.5 ts of black pepper.\n" +
                             "3. Add the beef to the marinade and keep in the fridge at least 30 minutes. If your cut of beef is tough, you can marinate longer to soften it, or use a Korean pear in the marinade, like I do in this recipe.\n" +
                             "4. Cook it on a pan or a grill, and transfer to a plate or a cast iron plate to serve.\n" +
                             "5. Sprinkle chopped green onion and toasted sesame seeds over top.\n" +
@@ -142,7 +142,7 @@ public class HomeFragment extends Fragment {
             drawable = getResources().getDrawable(R.drawable.bolognese, getActivity().getTheme());
             byte[] bolognese = imageHelper.getByteArrayFromDrawable(drawable);
 
-            dbHelper.recipes_Insert("Itay", "Bolognese", "shyjoo", today.toString(),
+            dbHelper.recipes_Insert("Italy", "Bolognese", "shyjoo", today.toString(),
                     "1. Put the onion and oil in a large pan and fry over a fairly high heat for 3-4 mins. Add the garlic and mince and fry until they both brown. Add the mushrooms and herbs, and cook for another couple of mins.\n" +
                             "2. Stir in the tomatoes, beef stock, tomato ketchup or purée, Worcestershire sauce and seasoning. Bring to the boil, then reduce the heat, cover and simmer, stirring occasionally, for 30 mins.\n" +
                             "3. Meanwhile, cook the spaghetti in a large pan of boiling, salted water, according to packet instructions. Drain well, run hot water through it, put it back in the pan and add a dash of olive oil, if you like, then stir in the meat sauce. Serve in hot bowls and hand round Parmesan cheese, for sprinkling on top.",
@@ -170,7 +170,7 @@ public class HomeFragment extends Fragment {
             drawable = getResources().getDrawable(R.drawable.chickencacciatore, getActivity().getTheme());
             byte[] chickencacciatore = imageHelper.getByteArrayFromDrawable(drawable);
 
-            dbHelper.recipes_Insert("Itay", "Chicken Cacciatore ", "shyjoo", today.toString(),
+            dbHelper.recipes_Insert("Italy", "Chicken Cacciatore ", "shyjoo", today.toString(),
                     "1. Combine the flour, salt and pepper in a plastic bag. Shake the chicken pieces in flour until coated. Heat the oil in a large skillet (one that has a cover/lid). Fry the chicken pieces until they are browned on both sides. Remove from skillet.\n" +
                             "2. Add the onion, garlic and bell pepper to the skillet and saute until the onion is slightly browned. Return the chicken to the skillet and add the tomatoes, oregano and wine. Cover and simmer for 30 minutes over medium low heat.\n" +
                             "3. Add the mushrooms and salt and pepper to taste. Simmer for 10 more minutes.",

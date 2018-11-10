@@ -41,7 +41,7 @@ public class DBHelper extends SQLiteOpenHelper
                 + "recipeName TEXT, author TEXT, uploardDate TEXT, howTo TEXT, description TEXT,"
                 + "thumbnail BLOB, mainImg BLOB, likeCount INTEGER);");
 
-        db.execSQL("CREATE TABLE INGREDIENTS( _id INTEGER PRIMARY KEY AUTOINCREMENT, recipeID INTEGER, ingreName TEXT);");
+        db.execSQL("CREATE TABLE INGREDIENTS( _id INTEGER PRIMARY KEY AUTOINCREMENT, recipeID INTEGER, ingreName TEXT, ingreM TEXT, ingreQ TEXT);");
 
         db.execSQL("CREATE TABLE LIKECOUNT( _id INTEGER PRIMARY KEY AUTOINCREMENT, userID TEXT, recipeID INTEGER);");
 
@@ -139,11 +139,13 @@ public class DBHelper extends SQLiteOpenHelper
 
     public  void  ingredients_Insert(int recipeid, String ingreName)
     {
-        // open read and write database
         SQLiteDatabase db = getWritableDatabase();
-        // execute insert query
-        db.execSQL("INSERT INTO INGREDIENTS VALUES(null, " + recipeid + ", '" + ingreName + "');");
-
+        if(Character.isDigit(ingreName.charAt(0))){
+            String[] ingreAll = ingreName.split(" ", 3);
+            db.execSQL("INSERT INTO INGREDIENTS ( _id , recipeID, ingreName, ingreM, ingreQ) VALUES (null, " + recipeid + ", '" + ingreAll[2] + "', '" + ingreAll[1] + "', '" + ingreAll[0] + "');");
+        } else{
+            db.execSQL("INSERT INTO INGREDIENTS (_id, recipeID, ingreName) VALUES (null, " + recipeid + ", '" + ingreName + "');");
+        }
         db.close();
     }
 

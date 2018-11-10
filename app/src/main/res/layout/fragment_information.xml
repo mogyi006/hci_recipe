@@ -18,10 +18,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
         android:gravity="center"
-        android:text="Miju Jang"
+        android:text="Ádám Erdélyi"
         android:textSize="24sp" />
 
     <TextView
@@ -29,10 +29,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
         android:gravity="center"
-        android:text="Pierluigi De Stasio"
+        android:text="József Kenderák"
         android:textSize="24sp" />
 
     <TextView
@@ -40,21 +40,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="Pyosang Park"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="Andrei Churkin"
+        android:text="Ferenc Mogyorósi"
         android:textSize="24sp" />
 
     <LinearLayout
@@ -69,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:gravity="center"
-            android:text="Cambrian at Hanson. 2017" />
+            android:text="Budapest University of Technology, 2018" />
     </LinearLayout>
 
 </LinearLayout>
