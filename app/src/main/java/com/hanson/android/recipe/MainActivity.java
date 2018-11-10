@@ -147,6 +147,13 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
+        else if (id == R.id.nav_shoppingcart)
+        {
+            //connect to category page
+            ShoppingCartFragment shoppingCartFragment = new ShoppingCartFragment();
+            manager.beginTransaction().replace(R.id.root_layout, shoppingCartFragment, shoppingCartFragment.getTag()).addToBackStack(null).commit();
+
+        }
         else if (id == R.id.nav_category)
         {
             //connect to category page
