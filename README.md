@@ -3,10 +3,10 @@ An Android Application that gives you some recipes recommendations based on the 
 
 
 <p align="center">
-<img src="https://github.com/peterdestasio/searchrecipe/blob/master/app/src/main/res/drawable/logo.png" width="200" align="center">
+<img src="https://github.com/mogyi006/hci_recipe/blob/master/app/src/main/res/drawable/logo.png" width="200" align="center">
 </p>
 <p align="center">
-<img src="https://github.com/peterdestasio/searchrecipe/blob/master/presentationrecipe.gif">
+<img src="https://github.com/mogyi006/hci_recipe/blob/master/presentationrecipe.gif">
 </p>
 
 ## Getting Started
