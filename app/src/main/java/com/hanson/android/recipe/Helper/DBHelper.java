@@ -155,11 +155,15 @@ public class DBHelper extends SQLiteOpenHelper
         SQLiteDatabase db = getReadableDatabase();
         ArrayList<String> ingredients = new ArrayList<>();
         // Get all recipes data
-        Cursor cursor = db.rawQuery("SELECT ingreName FROM INGREDIENTS WHERE recipeID = " + id, null);
+        Cursor cursor = db.rawQuery("SELECT ingreQ, ingreM, ingreName FROM INGREDIENTS WHERE recipeID = " + id, null);
         if (cursor != null)
         {
             while (cursor.moveToNext()) {
-                ingredients.add(cursor.getString(0));
+                if (cursor.getString(0) != null) {
+                    ingredients.add(cursor.getString(0)+ " " + cursor.getString(1) + " " + cursor.getString(2));
+                } else{
+                    ingredients.add(cursor.getString(2));
+                }
             }
         }
         cursor.close();
