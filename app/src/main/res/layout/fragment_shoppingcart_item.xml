@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBG"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    tools:layout_width="match_parent">
+
+
+    <TextView
+        android:id="@+id/shoppingcartitem_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|bottom|left|right"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0.35"
+        android:background="@color/colorFont1"
+        android:gravity="left|center"
+        android:paddingLeft="10dp"
+        android:paddingTop="2dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="2dp"
+        android:text="Country"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:visibility="visible" />
+
+
+</FrameLayout>
