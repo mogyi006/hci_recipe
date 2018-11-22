@@ -96,22 +96,22 @@ public class MainActivity extends AppCompatActivity
         String userID = pref.getString("userID","");
 
 
-        if (userID != "")
-        {
-            navigationView.getMenu().findItem(R.id.nav_login).setVisible(false);
-            navigationView.getMenu().findItem(R.id.nav_add).setVisible(true);
-            navigationView.getMenu().findItem(R.id.nav_logout).setVisible(true);
+        //if (userID != "")
+        //{
+        //    navigationView.getMenu().findItem(R.id.nav_login).setVisible(false);
+        //    navigationView.getMenu().findItem(R.id.nav_add).setVisible(true);
+        //    navigationView.getMenu().findItem(R.id.nav_logout).setVisible(true);
             TextView userid = (TextView)findViewById(R.id.txt_Menu_UserId);
             userid.setText(userID);
-        }
-        else
-        {
-            navigationView.getMenu().findItem(R.id.nav_login).setVisible(true);
-            navigationView.getMenu().findItem(R.id.nav_add).setVisible(false);
-            navigationView.getMenu().findItem(R.id.nav_logout).setVisible(false);
-            TextView userid = (TextView)findViewById(R.id.txt_Menu_UserId);
-            userid.setText("");
-        }
+        //}
+        //else
+        //{
+        //    navigationView.getMenu().findItem(R.id.nav_login).setVisible(true);
+        //    navigationView.getMenu().findItem(R.id.nav_add).setVisible(false);
+        //    navigationView.getMenu().findItem(R.id.nav_logout).setVisible(false);
+        //    TextView userid = (TextView)findViewById(R.id.txt_Menu_UserId);
+        //    userid.setText("");
+        //}
         return true;
     }
 
@@ -141,12 +141,12 @@ public class MainActivity extends AppCompatActivity
             manager.beginTransaction().replace(R.id.root_layout, homeFragment, homeFragment.getTag()).addToBackStack(null).commit();
 
         }
-        else if (id == R.id.nav_login)
-        {
-            //connect to login page
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);
-        }
+        //else if (id == R.id.nav_login)
+        //{
+        //    //connect to login page
+        //   Intent intent = new Intent(this, LoginActivity.class);
+        //    startActivity(intent);
+        //}
         else if (id == R.id.nav_shoppingcart)
         {
             //connect to category page
@@ -180,14 +180,14 @@ public class MainActivity extends AppCompatActivity
             manager.beginTransaction().replace(R.id.root_layout, informationFragment, informationFragment.getTag()).addToBackStack(null).commit();
 
         }
-        else if (id == R.id.nav_logout)
-        {
-            Logout();
-            Toast.makeText(this.getBaseContext(), "Log out!", Toast.LENGTH_SHORT).show();
-            //connect to home page
-            HomeFragment homeFragment = new HomeFragment();
-            manager.beginTransaction().replace(R.id.root_layout, homeFragment, homeFragment.getTag()).addToBackStack(null).commit();
-        }
+        //else if (id == R.id.nav_logout)
+        //{
+        //    Logout();
+        //    Toast.makeText(this.getBaseContext(), "Log out!", Toast.LENGTH_SHORT).show();
+        //    //connect to home page
+        //    HomeFragment homeFragment = new HomeFragment();
+        //    manager.beginTransaction().replace(R.id.root_layout, homeFragment, homeFragment.getTag()).addToBackStack(null).commit();
+        //}
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

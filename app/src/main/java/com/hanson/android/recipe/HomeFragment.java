@@ -122,7 +122,7 @@ public class HomeFragment extends Fragment {
                             "4. Cook it on a pan or a grill, and transfer to a plate or a cast iron plate to serve.\n" +
                             "5. Sprinkle chopped green onion and toasted sesame seeds over top.\n" +
                             "6. Wrap a piece of bulgogi in a lettuce left with a little bit of ssamjang, and put it in your mouth. You can dip carrot or cucumber strips into the ssamjang.", "Korean traditional food",
-                    bulgogi, bulgogi, 4);
+                    bulgogi, bulgogi, 1);
 
             int bulgogiId = dbHelper.recipes_GetIdByName("Bulgogi");
             ArrayList<String> bulgogiIngre = new ArrayList<>();
@@ -147,7 +147,7 @@ public class HomeFragment extends Fragment {
                             "2. Stir in the tomatoes, beef stock, tomato ketchup or purée, Worcestershire sauce and seasoning. Bring to the boil, then reduce the heat, cover and simmer, stirring occasionally, for 30 mins.\n" +
                             "3. Meanwhile, cook the spaghetti in a large pan of boiling, salted water, according to packet instructions. Drain well, run hot water through it, put it back in the pan and add a dash of olive oil, if you like, then stir in the meat sauce. Serve in hot bowls and hand round Parmesan cheese, for sprinkling on top.",
                     "Make our traditional spaghetti Bolognese recipe with homemade Bolognese sauce and tender chunks of beef, making this dish a family favourite.",
-                    bolognese, bolognese, 6);
+                    bolognese, bolognese, 1);
 
             int bologneseId = dbHelper.recipes_GetIdByName("Bolognese");
             ArrayList<String> bologneseIngre = new ArrayList<>();
@@ -175,7 +175,7 @@ public class HomeFragment extends Fragment {
                             "2. Add the onion, garlic and bell pepper to the skillet and saute until the onion is slightly browned. Return the chicken to the skillet and add the tomatoes, oregano and wine. Cover and simmer for 30 minutes over medium low heat.\n" +
                             "3. Add the mushrooms and salt and pepper to taste. Simmer for 10 more minutes.",
                     "Many food names reflect various occupations or trades.",
-                    chickencacciatore, chickencacciatore, 2);
+                    chickencacciatore, chickencacciatore, 0);
 
             int chickencacciatoreId = dbHelper.recipes_GetIdByName("Chicken Cacciatore ");
             ArrayList<String> chickencacciatoreIngre = new ArrayList<>();
@@ -203,7 +203,7 @@ public class HomeFragment extends Fragment {
                             "2. Stir in the tomatoes, beef stock, tomato ketchup or purée, Worcestershire sauce and seasoning. Bring to the boil, then reduce the heat, cover and simmer, stirring occasionally, for 30 mins.\n" +
                             "3. Meanwhile, cook the spaghetti in a large pan of boiling, salted water, according to packet instructions. Drain well, run hot water through it, put it back in the pan and add a dash of olive oil, if you like, then stir in the meat sauce. Serve in hot bowls and hand round Parmesan cheese, for sprinkling on top.",
                     "Make our traditional spaghetti Bolognese recipe with homemade Bolognese sauce and tender chunks of beef, making this dish a family favourite.",
-                    abzhorka, abzhorka, 3);
+                    abzhorka, abzhorka, 1);
 
             int abzhorkaId = dbHelper.recipes_GetIdByName("Abzhorka");
             ArrayList<String> abzhorkaIngre = new ArrayList<>();
@@ -224,7 +224,7 @@ public class HomeFragment extends Fragment {
             dbHelper.recipes_Insert("Russia", "Beef Stroganoff", "shyjoo", today.toString(),
                     "Chop the meat long wise fibers (fibres) and beat the pieces a little. After that cut the pieces into stripes 2 cm long and 1/2 cm wide. Season and roll them in flour. Fry chopped onion in the pan and when it is gold brown, put the stripes there. Fry on hot heat until the meat is light brown. Make a sauce: fry 1 tb flour pounded with butter for few minutes, add sour cream, ketchup, salt. Pour the sauce over meat and stew on a low heat during 15-20 minutes. Don't let sauce to boil, overwise the meat will be hard. Beef Stroganoff is served with fried potatoes.\n",
                     "Beef stroganoff is a dish consisting of strips of lean beef sauteed and served in a sour-cream sauce with onions and mushrooms. Legend has it that when he was stationed in deepest Siberia, his chef discovered that the beef was frozen so solid that it could only be coped with by cutting it into very thin strips.",
-                    beefstroganoff, beefstroganoff, 8);
+                    beefstroganoff, beefstroganoff, 1);
 
             int beefstroganoffId = dbHelper.recipes_GetIdByName("Beef Stroganoff");
             ArrayList<String> beefstroganoffIngre = new ArrayList<>();
