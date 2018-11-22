@@ -552,22 +552,30 @@ public class DBHelper extends SQLiteOpenHelper
         return count;
     }
 
-    public boolean like_GetLikeYNByUserId(String userId, int recipeId)
+    public boolean like_GetLiked(String userId, int recipeId)
     {
-        // Open available reading database
+        
         SQLiteDatabase db = getReadableDatabase();
-        //variable id
-        boolean likeNY= false;
-        Cursor cursor = db.rawQuery("SELECT * FROM LIKECOUNT WHERE userID = '" + userId + "' AND recipeID = " + recipeId, null);
+        int count= -1;
+        Cursor cursor = db.rawQuery("SELECT likeCount FROM RECIPES WHERE _id = " + recipeId , null);
         if(cursor != null)
         {
             while (cursor.moveToNext()){
-                likeNY = true;
+                count = cursor.getInt(0);
             }
         }
         cursor.close();
         db.close();
-        return likeNY;
+
+        if(count != 0)
+        {
+          return true;
+        }
+        else
+        {
+          return false;
+        }
+
     }
 
 }

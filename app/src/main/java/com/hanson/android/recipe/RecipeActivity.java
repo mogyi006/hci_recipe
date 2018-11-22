@@ -84,7 +84,7 @@ public class RecipeActivity extends AppCompatActivity {
             Toast.makeText(this,"error",Toast.LENGTH_SHORT).show();
         }
 
-        like.setChecked(dbHelper.like_GetLikeYNByUserId(userID, recipeItem.get_id()));
+        like.setChecked(dbHelper.like_GetLiked(userID, recipeItem.get_id()));
 
         like.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
