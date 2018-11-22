@@ -32,9 +32,7 @@ import java.util.Iterator;
 import static com.hanson.android.recipe.R.drawable.*;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class HomeFragment extends Fragment {
     ImageHelper imageHelper = new ImageHelper();
     ArrayList<RecipeItem> bestList;
@@ -72,11 +70,6 @@ public class HomeFragment extends Fragment {
         //Connect DB
         DBHelper dbHelper = new DBHelper(getContext(), "Recipes.db", null, 1);
 
-//        int userCount = dbHelper.user_Allcount();
-//        if (userCount == 0)
-//        {
-//            dbHelper.user_Insert("shyoo","0000");
-//        }
 
         ArrayList<RecipeItem> defaultDataList = dbHelper.recipes_SelectAll();
         if(defaultDataList == null || defaultDataList.size() == 0)

@@ -53,12 +53,9 @@ public class RecipeList_Adapter extends BaseAdapter {
         ListView_Image.setImageBitmap(imageHelper.getBitmapFromByteArray(recipeItem.get_thumbnail()));
 
         TextView listView_title=(TextView)convertView.findViewById(R.id.listItem_title);
-        //TextView listView_author=(TextView)convertView.findViewById(R.id.listItem_author);
         TextView listView_liked=(TextView)convertView.findViewById(R.id.listItem_liked);
 
         listView_title.setText(recipeItem.get_recipeName());
-        //listView_author.setText(recipeItem.get_author());
-        //listView_liked.setText(String.valueOf(recipeItem.get_liked()));
 
         if(recipeItem.get_liked() > 0) {
             listView_liked.setVisibility(View.VISIBLE);

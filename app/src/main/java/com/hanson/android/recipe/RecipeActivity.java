@@ -40,8 +40,6 @@ public class RecipeActivity extends AppCompatActivity {
 
         //connect with view
         TextView recipeName = (TextView)findViewById(R.id.txt_recipeName);
-        //TextView author = (TextView)findViewById(R.id.txt_recipeAuthor);
-        //TextView uploadDate = (TextView)findViewById(R.id.txt_recipeUploaddate);
         TextView country = (TextView)findViewById(R.id.txt_recipeCountry);
         TextView ingredients = (TextView)findViewById(R.id.txt_recipeIngredients);
         TextView description = (TextView)findViewById(R.id.txt_recipeDescription);
@@ -64,8 +62,6 @@ public class RecipeActivity extends AppCompatActivity {
             //data bind
             mainImg.setImageBitmap(imageHelper.getBitmapFromByteArray(recipeItem.get_mainImg()));
             recipeName.setText(recipeItem.get_recipeName());
-            //author.setText(recipeItem.get_author());
-            //uploadDate.setText(recipeItem.get_uploadDate());
             country.setText(recipeItem.get_category());
             description.setText(recipeItem.get_Description());
             howto.setText(recipeItem.get_howTo());
@@ -88,10 +84,7 @@ public class RecipeActivity extends AppCompatActivity {
             Toast.makeText(this,"error",Toast.LENGTH_SHORT).show();
         }
 
-        //if (userID != "")
-        //{
-            like.setChecked(dbHelper.like_GetLikeYNByUserId(userID, recipeItem.get_id()));
-        //}
+        like.setChecked(dbHelper.like_GetLikeYNByUserId(userID, recipeItem.get_id()));
 
         like.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -99,25 +92,14 @@ public class RecipeActivity extends AppCompatActivity {
                 //check again userid
                 SharedPreferences pref = getSharedPreferences("Login", Activity.MODE_PRIVATE);
                 final String userID = pref.getString("userID","");
-                //if (userID == "")
-                //{
-                //    //connect to login page
-                //    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                //    startActivity(intent);
-                //    buttonView.setChecked(false);
-                //}
-                //else
-                //{
-                    if (isChecked)
-                    {
-                        int count = dbHelper.recipes_AddLike(userID, recipeItem.get_id());
-                    }
-                    else
-                    {
-                        int count = dbHelper.recipes_MinusLike(userID, recipeItem.get_id());
-                    }
-                    //Toast.makeText(getBaseContext(),Boolean.toString(isChecked), Toast.LENGTH_SHORT).show();
-                //}
+                if (isChecked)
+                {
+                    int count = dbHelper.recipes_AddLike(userID, recipeItem.get_id());
+                }
+                else
+                 {
+                     int count = dbHelper.recipes_MinusLike(userID, recipeItem.get_id());
+                 }
             }
         });
 
