@@ -42,11 +42,7 @@
         <activity
             android:name=".RecipeListActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".LoginActivity"
-            android:screenOrientation="portrait" />
         <activity android:name=".TempSearchResultActivity" />
-        <activity android:name=".RegistrationActivity" />
         <activity android:name=".SearchResult"></activity>
     </application>
 
