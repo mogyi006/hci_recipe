@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="120dp"
@@ -19,29 +20,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp">
+
         <TextView
             android:id="@+id/listItem_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
-        <TextView
-            android:id="@+id/listItem_author"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:textSize="20dp"
-            android:text="Writer: "/>
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/listItem_likecount"
+            android:id="@+id/listItem_liked"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
             android:drawableLeft="@drawable/ic_like_list"
-            android:text="Like: "
-            android:textSize="20dp" />
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:scaleX="3"
+            android:scaleY="3"
+            android:textSize="20dp"
+            android:visibility="visible" />
     </LinearLayout>
 
 

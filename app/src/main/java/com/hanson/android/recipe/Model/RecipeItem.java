@@ -21,7 +21,7 @@ public class RecipeItem {
     private String description;
     private byte[] thumbnail;
     private byte[] mainImg;
-    private int likeCount;
+    private int liked;
 
     public int get_id(){ return id; }
     public String get_category(){return category;}
@@ -32,10 +32,10 @@ public class RecipeItem {
     public String get_Description(){return description;}
     public byte[] get_thumbnail(){return thumbnail;}
     public byte[] get_mainImg(){return mainImg;}
-    public int get_likeCount(){return likeCount;}
+    public int get_liked(){return liked;}
 
     public RecipeItem(int id, String category, String recipeName, String author, String uploadDate,
-                      String howTo, String description, byte[] thumbnail, byte[] mainImg, int likeCount) {
+                      String howTo, String description, byte[] thumbnail, byte[] mainImg, int liked) {
         this.id = id;
         this.category = category;
         this.recipeName = recipeName;
@@ -45,7 +45,7 @@ public class RecipeItem {
         this.description = description;
         this.thumbnail = thumbnail;
         this.mainImg = mainImg;
-        this.likeCount = likeCount;
+        this.liked = liked;
     }
 
 }

@@ -13,9 +13,6 @@ import com.hanson.android.recipe.Model.RecipeItem;
 
 import java.util.ArrayList;
 
-/**
- * Created by Pyosnag on 2017. 3. 23..
- */
 
 public class RecipeList_Adapter extends BaseAdapter {
 
@@ -56,12 +53,20 @@ public class RecipeList_Adapter extends BaseAdapter {
         ListView_Image.setImageBitmap(imageHelper.getBitmapFromByteArray(recipeItem.get_thumbnail()));
 
         TextView listView_title=(TextView)convertView.findViewById(R.id.listItem_title);
-        TextView listView_author=(TextView)convertView.findViewById(R.id.listItem_author);
-        TextView listView_likecount=(TextView)convertView.findViewById(R.id.listItem_likecount);
+        //TextView listView_author=(TextView)convertView.findViewById(R.id.listItem_author);
+        TextView listView_liked=(TextView)convertView.findViewById(R.id.listItem_liked);
 
         listView_title.setText(recipeItem.get_recipeName());
-        listView_author.setText(recipeItem.get_author());
-        listView_likecount.setText(String.valueOf(recipeItem.get_likeCount()));
+        //listView_author.setText(recipeItem.get_author());
+        //listView_liked.setText(String.valueOf(recipeItem.get_liked()));
+
+        if(recipeItem.get_liked() > 0) {
+            listView_liked.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            listView_liked.setVisibility(View.INVISIBLE);
+        }
 
         return convertView;
     }

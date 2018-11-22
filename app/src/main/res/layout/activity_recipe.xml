@@ -23,20 +23,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/txt_recipeUploaddate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginTop="-15dp"
-            android:gravity="right"
-            android:textColor="@android:color/white"
-            android:textSize="10sp"
-            app:layout_constraintRight_toLeftOf="@+id/txt_recipeAuthor"
-            tools:layout_editor_absoluteY="337dp" />
-
-        <TextView
             android:id="@+id/txt_recipeName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,20 +38,6 @@
             app:layout_constraintTop_toBottomOf="@+id/img_recipeMainImg" />
 
         <TextView
-            android:id="@+id/txt_recipeAuthor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginTop="8dp"
-            android:gravity="right"
-            android:text="Author"
-            android:textColor="@color/colorFont3"
-            android:textSize="10sp"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_recipeName" />
-
-        <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,7 +47,7 @@
             android:textColor="@color/colorFont1"
             android:textSize="14sp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_recipeAuthor" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_recipeName" />
 
         <TextView
             android:id="@+id/txt_recipeCountry"

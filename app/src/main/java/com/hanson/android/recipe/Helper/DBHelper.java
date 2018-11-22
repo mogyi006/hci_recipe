@@ -22,9 +22,6 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 
-/**
- * Created by lily on 2017-03-14.
- */
 
 public class DBHelper extends SQLiteOpenHelper
 {
@@ -531,7 +528,7 @@ public class DBHelper extends SQLiteOpenHelper
 
         db = getWritableDatabase();
         db.execSQL("UPDATE RECIPES SET likeCount = " + (count +1) + " WHERE _id = " + recipeId + ";");
-        db.execSQL("INSERT INTO LIKECOUNT values(null, '" + userId + "', " + recipeId + ");");
+        //db.execSQL("INSERT INTO LIKECOUNT values(null, '" + userId + "', " + recipeId + ");");
         db.close();
         return count;
     }
@@ -552,7 +549,7 @@ public class DBHelper extends SQLiteOpenHelper
 
         db = getWritableDatabase();
         db.execSQL("UPDATE RECIPES SET likeCount = " + (count - 1) + " WHERE _id = " + recipeId + ";");
-        db.execSQL("DELETE FROM LIKECOUNT WHERE userID = '" + userId + "' AND recipeID = " + recipeId + ";");
+        //db.execSQL("DELETE FROM LIKECOUNT WHERE userID = '" + userId + "' AND recipeID = " + recipeId + ";");
         db.close();
         return count;
     }
