@@ -1,13 +1,5 @@
-# Recipe Ideas - Travel the world through the food!
-An Android Application that gives you some recipes recommendations based on the ingredients that you have in the fridge.
-
-
-<p align="center">
-<img src="https://github.com/mogyi006/hci_recipe/blob/master/app/src/main/res/drawable/logo.png" width="200" align="center">
-</p>
-<p align="center">
-<img src="https://github.com/mogyi006/hci_recipe/blob/master/presentationrecipe.gif">
-</p>
+# RecipeBook!
+An Android Application that gives you some recipes recommendations based on the ingredients that you have in the fridge and helps you do the shopping.
 
 ## Getting Started
 1. Open Window &gt; Android SDK Manager, make sure you have these modules
