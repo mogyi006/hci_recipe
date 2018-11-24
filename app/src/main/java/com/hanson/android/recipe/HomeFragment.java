@@ -217,7 +217,7 @@ public class HomeFragment extends Fragment {
             dbHelper.recipes_Insert("Russia", "Beef Stroganoff", "shyjoo", today.toString(),
                     "Chop the meat long wise fibers (fibres) and beat the pieces a little. After that cut the pieces into stripes 2 cm long and 1/2 cm wide. Season and roll them in flour. Fry chopped onion in the pan and when it is gold brown, put the stripes there. Fry on hot heat until the meat is light brown. Make a sauce: fry 1 tb flour pounded with butter for few minutes, add sour cream, ketchup, salt. Pour the sauce over meat and stew on a low heat during 15-20 minutes. Don't let sauce to boil, overwise the meat will be hard. Beef Stroganoff is served with fried potatoes.\n",
                     "Beef stroganoff is a dish consisting of strips of lean beef sauteed and served in a sour-cream sauce with onions and mushrooms. Legend has it that when he was stationed in deepest Siberia, his chef discovered that the beef was frozen so solid that it could only be coped with by cutting it into very thin strips.",
-                    beefstroganoff, beefstroganoff, 1);
+                    beefstroganoff, beefstroganoff, 0);
 
             int beefstroganoffId = dbHelper.recipes_GetIdByName("Beef Stroganoff");
             ArrayList<String> beefstroganoffIngre = new ArrayList<>();

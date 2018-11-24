@@ -36,7 +36,7 @@ public class DBHelper extends SQLiteOpenHelper
         //create table
         db.execSQL("CREATE TABLE RECIPES( _id INTEGER PRIMARY KEY AUTOINCREMENT, category TEXT,"
                 + "recipeName TEXT, author TEXT, uploardDate TEXT, howTo TEXT, description TEXT,"
-                + "thumbnail BLOB, mainImg BLOB, likeCount INTEGER);");
+                + "thumbnail BLOB, mainImg BLOB, liked INTEGER);");
 
         db.execSQL("CREATE TABLE INGREDIENTS( _id INTEGER PRIMARY KEY AUTOINCREMENT, recipeID INTEGER, ingreName TEXT, ingreM TEXT, ingreQ TEXT);");
 
@@ -50,7 +50,7 @@ public class DBHelper extends SQLiteOpenHelper
 
     public void recipes_Insert(String category, String recipeName, String author,
                                String uploardDate, String howTo, String description,
-                               byte[] thumbnail, byte[] mainImg, int likeCount) {
+                               byte[] thumbnail, byte[] mainImg, int liked) {
 
         // open read and write database
         SQLiteDatabase db = getWritableDatabase();
@@ -66,7 +66,7 @@ public class DBHelper extends SQLiteOpenHelper
         p.bindString(7, description);
         p.bindBlob(8, thumbnail);
         p.bindBlob(9, mainImg);
-        p.bindLong(10, likeCount);
+        p.bindLong(10, liked);
         p.execute();
         db.close();
     }
@@ -301,7 +301,7 @@ public class DBHelper extends SQLiteOpenHelper
         SQLiteDatabase db = getReadableDatabase();
         ArrayList<RecipeItem> allRecipes = new ArrayList<>();
         // Get all recipes data
-        Cursor cursor = db.rawQuery("SELECT * FROM RECIPES ORDER BY likeCount DESC LIMIT 3", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM RECIPES ORDER BY liked DESC LIMIT 3", null);
         if (cursor != null)
         {
             while (cursor.moveToNext()) {
@@ -452,7 +452,7 @@ public class DBHelper extends SQLiteOpenHelper
         // Open available reading database
         SQLiteDatabase db = getReadableDatabase();
         int count= -1;
-        Cursor cursor = db.rawQuery("SELECT likeCount FROM RECIPES WHERE _id = " + recipeId , null);
+        Cursor cursor = db.rawQuery("SELECT liked FROM RECIPES WHERE _id = " + recipeId , null);
         if(cursor != null)
         {
             while (cursor.moveToNext()){
@@ -462,7 +462,7 @@ public class DBHelper extends SQLiteOpenHelper
         cursor.close();
 
         db = getWritableDatabase();
-        db.execSQL("UPDATE RECIPES SET likeCount = " + (count +1) + " WHERE _id = " + recipeId + ";");
+        db.execSQL("UPDATE RECIPES SET liked = " + (count +1) + " WHERE _id = " + recipeId + ";");
         db.close();
         return count;
     }
@@ -472,7 +472,7 @@ public class DBHelper extends SQLiteOpenHelper
         // Open available reading database
         SQLiteDatabase db = getReadableDatabase();
         int count= -1;
-        Cursor cursor = db.rawQuery("SELECT likeCount FROM RECIPES WHERE _id = " + recipeId , null);
+        Cursor cursor = db.rawQuery("SELECT liked FROM RECIPES WHERE _id = " + recipeId , null);
         if(cursor != null)
         {
             while (cursor.moveToNext()){
@@ -482,7 +482,7 @@ public class DBHelper extends SQLiteOpenHelper
         cursor.close();
 
         db = getWritableDatabase();
-        db.execSQL("UPDATE RECIPES SET likeCount = " + (count - 1) + " WHERE _id = " + recipeId + ";");
+        db.execSQL("UPDATE RECIPES SET liked = " + (count - 1) + " WHERE _id = " + recipeId + ";");
         db.close();
         return count;
     }
@@ -492,7 +492,7 @@ public class DBHelper extends SQLiteOpenHelper
 
         SQLiteDatabase db = getReadableDatabase();
         int count= -1;
-        Cursor cursor = db.rawQuery("SELECT likeCount FROM RECIPES WHERE _id = " + recipeId , null);
+        Cursor cursor = db.rawQuery("SELECT liked FROM RECIPES WHERE _id = " + recipeId , null);
         if(cursor != null)
         {
             while (cursor.moveToNext()){
