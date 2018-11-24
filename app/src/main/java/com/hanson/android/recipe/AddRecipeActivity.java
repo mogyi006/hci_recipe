@@ -235,7 +235,7 @@ public class AddRecipeActivity extends AppCompatActivity {
                 //Connect DB
                 DBHelper dbHelper = new DBHelper(v.getContext(), "Recipes.db", null, 1);
 
-                dbHelper.recipes_Insert(makeCategory, makeRecipeName, makeAuthor, today.toString(),
+                dbHelper.recipes_Insert(makeCategory, makeRecipeName,
                 makeHowto, makeDescription,
                 makeThumbnail, makeMainImg, 0);
                 int makeRecipeid = dbHelper.recipes_GetIdByName(makeRecipeName);

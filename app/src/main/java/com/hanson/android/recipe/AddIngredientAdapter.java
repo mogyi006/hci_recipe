@@ -11,9 +11,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by lily on 2017-03-13.
- */
+
 
 public class AddIngredientAdapter extends BaseAdapter {
 

@@ -35,7 +35,7 @@ public class DBHelper extends SQLiteOpenHelper
     public void onCreate(SQLiteDatabase db) {
         //create table
         db.execSQL("CREATE TABLE RECIPES( _id INTEGER PRIMARY KEY AUTOINCREMENT, category TEXT,"
-                + "recipeName TEXT, author TEXT, uploardDate TEXT, howTo TEXT, description TEXT,"
+                + "recipeName TEXT, howTo TEXT, description TEXT,"
                 + "thumbnail BLOB, mainImg BLOB, liked INTEGER);");
 
         db.execSQL("CREATE TABLE INGREDIENTS( _id INTEGER PRIMARY KEY AUTOINCREMENT, recipeID INTEGER, ingreName TEXT, ingreM TEXT, ingreQ TEXT);");
@@ -48,25 +48,22 @@ public class DBHelper extends SQLiteOpenHelper
 
     }
 
-    public void recipes_Insert(String category, String recipeName, String author,
-                               String uploardDate, String howTo, String description,
+    public void recipes_Insert(String category, String recipeName, String howTo, String description,
                                byte[] thumbnail, byte[] mainImg, int liked) {
 
         // open read and write database
         SQLiteDatabase db = getWritableDatabase();
         // execute insert query
         //db.execSQL("INSERT INTO RECIPES VALUES(null, '" + category + "', '" + recipeName + "', " + thumbnail  + ");");
-        SQLiteStatement p = db.compileStatement("INSERT INTO RECIPES values(?,?,?,?,?,?,?,?,?,?);");
+        SQLiteStatement p = db.compileStatement("INSERT INTO RECIPES values(?,?,?,?,?,?,?,?);");
         p.bindNull(1);
         p.bindString(2, category);
         p.bindString(3, recipeName);
-        p.bindString(4, author);
-        p.bindString(5, uploardDate);
-        p.bindString(6, howTo);
-        p.bindString(7, description);
-        p.bindBlob(8, thumbnail);
-        p.bindBlob(9, mainImg);
-        p.bindLong(10, liked);
+        p.bindString(4, howTo);
+        p.bindString(5, description);
+        p.bindBlob(6, thumbnail);
+        p.bindBlob(7, mainImg);
+        p.bindLong(8, liked);
         p.execute();
         db.close();
     }
@@ -260,11 +257,9 @@ public class DBHelper extends SQLiteOpenHelper
                         cursor.getString(2),
                         cursor.getString(3),
                         cursor.getString(4),
-                        cursor.getString(5),
-                        cursor.getString(6),
-                        cursor.getBlob(7),
-                        cursor.getBlob(8),
-                        cursor.getInt(9)
+                        cursor.getBlob(5),
+                        cursor.getBlob(6),
+                        cursor.getInt(7)
                 ));
             }
         }
@@ -311,11 +306,9 @@ public class DBHelper extends SQLiteOpenHelper
                         cursor.getString(2),
                         cursor.getString(3),
                         cursor.getString(4),
-                        cursor.getString(5),
-                        cursor.getString(6),
-                        cursor.getBlob(7),
-                        cursor.getBlob(8),
-                        cursor.getInt(9)
+                        cursor.getBlob(5),
+                        cursor.getBlob(6),
+                        cursor.getInt(7)
                 ));
             }
         }
@@ -341,11 +334,9 @@ public class DBHelper extends SQLiteOpenHelper
                         cursor.getString(2),
                         cursor.getString(3),
                         cursor.getString(4),
-                        cursor.getString(5),
-                        cursor.getString(6),
-                        cursor.getBlob(7),
-                        cursor.getBlob(8),
-                        cursor.getInt(9)
+                        cursor.getBlob(5),
+                        cursor.getBlob(6),
+                        cursor.getInt(7)
                 ));
             }
         }
@@ -371,11 +362,9 @@ public class DBHelper extends SQLiteOpenHelper
                         cursor.getString(2),
                         cursor.getString(3),
                         cursor.getString(4),
-                        cursor.getString(5),
-                        cursor.getString(6),
-                        cursor.getBlob(7),
-                        cursor.getBlob(8),
-                        cursor.getInt(9)
+                        cursor.getBlob(5),
+                        cursor.getBlob(6),
+                        cursor.getInt(7)
                 ));
             }
         }
@@ -400,11 +389,9 @@ public class DBHelper extends SQLiteOpenHelper
                         cursor.getString(2),
                         cursor.getString(3),
                         cursor.getString(4),
-                        cursor.getString(5),
-                        cursor.getString(6),
-                        cursor.getBlob(7),
-                        cursor.getBlob(8),
-                        cursor.getInt(9)
+                        cursor.getBlob(5),
+                        cursor.getBlob(6),
+                        cursor.getInt(7)
                 );
                 cursor.close();
                 db.close();
@@ -431,11 +418,9 @@ public class DBHelper extends SQLiteOpenHelper
                         cursor.getString(2),
                         cursor.getString(3),
                         cursor.getString(4),
-                        cursor.getString(5),
-                        cursor.getString(6),
-                        cursor.getBlob(7),
-                        cursor.getBlob(8),
-                        cursor.getInt(9)
+                        cursor.getBlob(5),
+                        cursor.getBlob(6),
+                        cursor.getInt(7)
                 );
                 cursor.close();
                 db.close();
