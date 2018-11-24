@@ -59,7 +59,6 @@ public class AddRecipeActivity extends AppCompatActivity {
 
     private Button btn_addNewRecipe;
     private EditText newName;
-    private TextView newAuthor;
     private Spinner newCounty;
     private ImageView newMainImg;
     private EditText newDescription;
@@ -142,7 +141,6 @@ public class AddRecipeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 newMainImg = (ImageView)findViewById(R.id.imgv_Add_Image);
                 newName = (EditText)findViewById(R.id.txt_Add_NewName);
-                newAuthor = (TextView)findViewById(R.id.txt_Add_Author);
                 newCounty = (Spinner)findViewById(R.id.spinner_Add_Country);
                 newDescription = (EditText)findViewById(R.id.txt_Add_Description);
                 newIngredientList = (ListView)findViewById(R.id.ListView_Add_Ingredient);
@@ -152,10 +150,8 @@ public class AddRecipeActivity extends AppCompatActivity {
                 byte[] makeThumbnail;
                 String makeRecipeName;
                 String makeDescription;
-                String makeAuthor;
                 String makeCategory;
                 String makeHowto;
-                Date today = new Date();
                 ArrayList<String> makeIndeList = new ArrayList<String>();
 
                 if(newMainImg.getDrawable() != null)
@@ -181,8 +177,6 @@ public class AddRecipeActivity extends AppCompatActivity {
                     Toast.makeText(v.getContext(), "Please, input new recipe name!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-                makeAuthor = newAuthor.getText().toString();
 
                 if (newCounty.getSelectedItem() != null && !newCounty.getSelectedItem().toString().isEmpty()){
                     makeCategory = newCounty.getSelectedItem().toString();

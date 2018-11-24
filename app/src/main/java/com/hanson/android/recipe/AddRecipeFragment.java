@@ -54,7 +54,6 @@ public class AddRecipeFragment extends Fragment {
     ImageHelper imageHelper = new ImageHelper();
     InputMethodManager imm;
     TextView recipeName;
-    TextView author;
     Spinner country;
     EditText description;
     ImageButton camera;
@@ -82,8 +81,6 @@ public class AddRecipeFragment extends Fragment {
         //set userid
         SharedPreferences pref = view.getContext().getSharedPreferences("Login", Activity.MODE_PRIVATE);
         String userID = pref.getString("userID","");
-        author = (TextView) view.findViewById(R.id.txt_Add_Author);
-        author.setText(userID);
 
         //hidding keybord
         imm = (InputMethodManager)getActivity().getSystemService(INPUT_METHOD_SERVICE);
