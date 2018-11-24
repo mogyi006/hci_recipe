@@ -1,8 +1,6 @@
 package com.hanson.android.recipe.Model;
 
-/**
- * Created by lily on 2017-03-16.
- */
+
 
 public class CategoryItem {
     private String category;

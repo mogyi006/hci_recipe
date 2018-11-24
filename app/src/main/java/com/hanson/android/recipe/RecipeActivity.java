@@ -40,7 +40,7 @@ public class RecipeActivity extends AppCompatActivity {
 
         //connect with view
         TextView recipeName = (TextView)findViewById(R.id.txt_recipeName);
-        TextView country = (TextView)findViewById(R.id.txt_recipeCountry);
+        TextView country = (TextView)findViewById(R.id.txt_recipeCategory);
         TextView ingredients = (TextView)findViewById(R.id.txt_recipeIngredients);
         TextView description = (TextView)findViewById(R.id.txt_recipeDescription);
         TextView howto = (TextView)findViewById(R.id.txt_recipeHowto);

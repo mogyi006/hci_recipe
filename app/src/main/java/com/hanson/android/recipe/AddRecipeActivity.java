@@ -3,8 +3,6 @@ package com.hanson.android.recipe;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,9 +14,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -26,20 +21,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hanson.android.recipe.Helper.DBHelper;
 import com.hanson.android.recipe.Helper.ImageHelper;
-import com.hanson.android.recipe.Model.RecipeItem;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Vector;
 
 public class AddRecipeActivity extends AppCompatActivity {
 
@@ -59,7 +47,7 @@ public class AddRecipeActivity extends AppCompatActivity {
 
     private Button btn_addNewRecipe;
     private EditText newName;
-    private Spinner newCounty;
+    private Spinner newCategory;
     private ImageView newMainImg;
     private EditText newDescription;
     private ListView newIngredientList;
@@ -141,7 +129,7 @@ public class AddRecipeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 newMainImg = (ImageView)findViewById(R.id.imgv_Add_Image);
                 newName = (EditText)findViewById(R.id.txt_Add_NewName);
-                newCounty = (Spinner)findViewById(R.id.spinner_Add_Country);
+                newCategory = (Spinner)findViewById(R.id.spinner_Add_Category);
                 newDescription = (EditText)findViewById(R.id.txt_Add_Description);
                 newIngredientList = (ListView)findViewById(R.id.ListView_Add_Ingredient);
                 newHowto = (EditText)findViewById(R.id.txt_ADD_Howto);
@@ -178,13 +166,13 @@ public class AddRecipeActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (newCounty.getSelectedItem() != null && !newCounty.getSelectedItem().toString().isEmpty()){
-                    makeCategory = newCounty.getSelectedItem().toString();
+                if (newCategory.getSelectedItem() != null && !newCategory.getSelectedItem().toString().isEmpty()){
+                    makeCategory = newCategory.getSelectedItem().toString();
                     //Toast.makeText(v.getContext(), makeCategory, Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    Toast.makeText(v.getContext(), "Please, select the Country!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(v.getContext(), "Please, select the Category!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 

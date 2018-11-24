@@ -54,7 +54,7 @@ public class AddRecipeFragment extends Fragment {
     ImageHelper imageHelper = new ImageHelper();
     InputMethodManager imm;
     TextView recipeName;
-    Spinner country;
+    Spinner category;
     EditText description;
     ImageButton camera;
 

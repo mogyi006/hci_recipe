@@ -1,8 +1,5 @@
 package com.hanson.android.recipe.Model;
 
-/**
- * Created by lily on 2017-03-27.
- */
 
 public class SearchResultItem {
     private int ingrCount;

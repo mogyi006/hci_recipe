@@ -2,9 +2,6 @@ package com.hanson.android.recipe.Model;
 
 import java.util.ArrayList;
 
-/**
- * Created by asus on 24/03/2017.
- */
 
 public class RecipeIngr {
 

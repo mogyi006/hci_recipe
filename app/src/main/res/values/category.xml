@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="CategoryName">
+        <item>Main Course</item>
+        <item>Pasta</item>
+        <item>Soup</item>
+        <item>Dessert</item>
+    </string-array>
+</resources>

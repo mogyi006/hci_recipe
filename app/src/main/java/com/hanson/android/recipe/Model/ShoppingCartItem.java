@@ -1,5 +1,6 @@
 package com.hanson.android.recipe.Model;
 
+
 public class ShoppingCartItem {
     private String ingredient;
 

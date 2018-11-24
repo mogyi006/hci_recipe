@@ -1,8 +1,5 @@
 package com.hanson.android.recipe.Model;
 
-/**
- * Created by asus on 24/03/2017.
- */
 
 public class IngredientItem {
 
