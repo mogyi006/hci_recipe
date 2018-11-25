@@ -84,7 +84,7 @@ public class DBHelper extends SQLiteOpenHelper
     public  void  shoppinglist_Update(String ingreName, String ingreM, String ingreQ)
     {
         SQLiteDatabase db = getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT ingreName, ingreM, ingreQ FROM SHOPPINGLIST WHERE ingreName = '" + ingreName + "';", null);
+        Cursor cursor = db.rawQuery("SELECT _id, ingreName, ingreM, ingreQ FROM SHOPPINGLIST WHERE ingreName = '" + ingreName + "';", null);
         if (cursor == null){
             if(ingreQ != null){
                 db.execSQL("INSERT INTO SHOPPINGLIST ( _id , ingreName, ingreM, ingreQ) VALUES (null, " + ", '" + ingreName + "', '" + ingreM + "', '" + ingreQ + "');");
@@ -94,7 +94,7 @@ public class DBHelper extends SQLiteOpenHelper
         } else {
             if (ingreQ == null){
                 while (cursor.moveToNext()) {
-                    if (cursor.getString(2) == null) {
+                    if (cursor.getString(3) == null) {
                         cursor.close();
                         db.close();
                         return;
@@ -104,9 +104,9 @@ public class DBHelper extends SQLiteOpenHelper
             } else {
                 while (cursor.moveToNext()) {
                     // TODO convert units and add quantities
-                    if (cursor.getString(1) == ingreQ) {
-                        String newingreQ = Double.toString(Double.parseDouble(cursor.getString(1) + Double.parseDouble(ingreQ)));
-                        db.execSQL("INSERT INTO SHOPPINGLIST ( _id , ingreName, ingreM, ingreQ) VALUES (null, " + ", '" + ingreName + "', '" + ingreM + "', '" + newingreQ + "');");
+                    if (cursor.getString(2) == ingreM) {
+                        String newingreQ = Double.toString(Double.parseDouble(cursor.getString(3) + Double.parseDouble(ingreQ)));
+                        db.execSQL("UPDATE SHOPPINGLIST SET IngreQ = '" + newingreQ + "' WHERE _id = "+ cursor.getString(0) + ";");
                     } else {
                         db.execSQL("INSERT INTO SHOPPINGLIST ( _id , ingreName, ingreM, ingreQ) VALUES (null, " + ", '" + ingreName + "', '" + ingreM + "', '" + ingreQ + "');");
                     }
