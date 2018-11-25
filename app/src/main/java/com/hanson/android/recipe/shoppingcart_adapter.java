@@ -30,13 +30,14 @@ public class shoppingcart_adapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return shoppingList.get(position).get_ingredient();
+        return shoppingList.get(position).get_ingredient_name();
     }
 
     @Override
     public long getItemId(int position) {
         return position;
     }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -46,7 +47,7 @@ public class shoppingcart_adapter extends BaseAdapter {
         ShoppingCartItem shoppingItem = shoppingList.get(position);
 
         TextView name = (TextView)convertView.findViewById(R.id.shoppingcartitem_text);
-        name.setText(shoppingItem.get_ingredient());
+        name.setText(shoppingItem.get_ingredient_name());
         return convertView;
     }
 }

@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
@@ -17,6 +19,9 @@ import com.hanson.android.recipe.Helper.ImageHelper;
 import com.hanson.android.recipe.Model.RecipeItem;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.Iterator;
 
 public class RecipeActivity extends AppCompatActivity {
     ImageHelper imageHelper = new ImageHelper();
@@ -46,6 +51,7 @@ public class RecipeActivity extends AppCompatActivity {
         TextView howto = (TextView)findViewById(R.id.txt_recipeHowto);
         ImageView mainImg = (ImageView)findViewById(R.id.img_recipeMainImg);
         CheckBox like = (CheckBox) findViewById(R.id.chk_recipeLike);
+        Button add2cart = (Button) findViewById(R.id.btnAdd2Cart);
 
         //set for received data
         Intent intent = getIntent();
@@ -100,6 +106,24 @@ public class RecipeActivity extends AppCompatActivity {
                  {
                      int count = dbHelper.recipes_MinusLike(userID, recipeItem.get_id());
                  }
+            }
+        });
+
+        add2cart.setOnClickListener(new View.OnClickListener() {
+            ArrayList<String> ingredentList = dbHelper.ingredients_SelectByRecipeId(recipeItem.get_id());
+            @Override
+            public void onClick(View view) {
+                for (int counter = 0; counter < ingredentList.size(); counter++) {
+                    String ingreName = ingredentList.get(counter);
+                    if(Character.isDigit(ingreName.charAt(0))){
+                        String[] ingreAll = ingreName.split(" ", 3);
+                        dbHelper.shoppinglist_Insert(ingreAll[2], ingreAll[0] ,ingreAll[1]);
+                    }
+                    else {
+                        dbHelper.shoppinglist_Insert(ingreName, "" ,"");
+                    }
+                }
+
             }
         });
 

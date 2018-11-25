@@ -27,8 +27,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
             android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
             android:text="Recipe Name"
             android:textColor="@color/colorAccent_deepBlue"
             android:textSize="18sp"
@@ -54,8 +54,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
             android:layout_marginTop="8dp"
+            android:layout_marginRight="24dp"
             android:textColor="@color/colorFont1"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -64,11 +64,11 @@
 
         <TextView
             android:id="@+id/textView13"
-            android:layout_width="match_parent"
+            android:layout_width="262dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
             android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
             android:text="Ingredients"
             android:textColor="@color/colorFont1"
             app:layout_constraintHorizontal_bias="0.0"
@@ -76,38 +76,48 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_recipeCategory" />
 
+        <Button
+            android:id="@+id/btnAdd2Cart"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="0dp"
+            android:text="+" />
+
         <TextView
             android:id="@+id/txt_recipeIngredients"
-            android:layout_width="match_parent"
+            android:layout_width="262dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
             android:layout_marginTop="8dp"
+            android:layout_marginRight="24dp"
             android:lineSpacingMultiplier="1.3"
             android:textColor="@color/colorAccent"
             android:textStyle="italic"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
+
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
             android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
             android:text="Description"
             android:textColor="@color/colorFont1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_recipeIngredients" />
+
 
         <TextView
             android:id="@+id/txt_recipeDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
             android:layout_marginTop="8dp"
+            android:layout_marginRight="24dp"
             android:lineSpacingMultiplier="1.3"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView14" />
@@ -117,8 +127,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
             android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
             android:text="How to"
             android:textColor="@color/colorFont1"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -129,8 +139,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
             android:layout_marginTop="8dp"
+            android:layout_marginRight="24dp"
             android:lineSpacingMultiplier="1.3"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -156,6 +166,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_recipeHowto" />
+
+
     </LinearLayout>
 
 </ScrollView>

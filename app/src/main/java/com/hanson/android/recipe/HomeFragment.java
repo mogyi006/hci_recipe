@@ -70,7 +70,6 @@ public class HomeFragment extends Fragment {
         //Connect DB
         DBHelper dbHelper = new DBHelper(getContext(), "Recipes.db", null, 1);
 
-
         ArrayList<RecipeItem> defaultDataList = dbHelper.recipes_SelectAll();
         if(defaultDataList == null || defaultDataList.size() == 0)
         {
