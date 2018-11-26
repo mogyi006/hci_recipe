@@ -47,7 +47,8 @@ public class shoppingcart_adapter extends BaseAdapter {
         ShoppingCartItem shoppingItem = shoppingList.get(position);
 
         TextView name = (TextView)convertView.findViewById(R.id.shoppingcartitem_text);
-        name.setText(shoppingItem.get_ingredient_name());
+        name.setText(" "+ shoppingItem.get_ingreM() + " " + shoppingItem.get_ingreQ() + " " + shoppingItem.get_ingredient_name()  );
+
         return convertView;
     }
 }
