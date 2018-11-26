@@ -123,6 +123,8 @@ public class RecipeActivity extends AppCompatActivity {
                         dbHelper.shoppinglist_Insert(ingreName, "" ,"");
                     }
                 }
+                Toast.makeText(RecipeActivity.this,"Ingredients has been added to the cart!", Toast.LENGTH_SHORT).show();
+
             }
         });
 
