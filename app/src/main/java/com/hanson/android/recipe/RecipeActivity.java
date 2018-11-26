@@ -19,9 +19,6 @@ import com.hanson.android.recipe.Helper.ImageHelper;
 import com.hanson.android.recipe.Model.RecipeItem;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.Iterator;
 
 public class RecipeActivity extends AppCompatActivity {
     ImageHelper imageHelper = new ImageHelper();
@@ -123,6 +120,8 @@ public class RecipeActivity extends AppCompatActivity {
                         dbHelper.shoppinglist_Insert(ingreName, "" ,"");
                     }
                 }
+                Toast.makeText(RecipeActivity.this,"Ingredients has been added to the cart!", Toast.LENGTH_SHORT).show();
+
             }
         });
 

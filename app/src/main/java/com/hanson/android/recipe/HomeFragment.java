@@ -2,11 +2,9 @@ package com.hanson.android.recipe;
 
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -18,19 +16,13 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.hanson.android.recipe.Helper.DBHelper;
 import com.hanson.android.recipe.Helper.ImageHelper;
-import com.hanson.android.recipe.Model.CategoryItem;
 import com.hanson.android.recipe.Model.RecipeItem;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
-
-import static com.hanson.android.recipe.R.drawable.*;
-
 
 
 public class HomeFragment extends Fragment {

@@ -4,7 +4,6 @@ package com.hanson.android.recipe;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,17 +15,15 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.hanson.android.recipe.Helper.DBHelper;
-import com.hanson.android.recipe.Model.IngredientItem;
 import com.hanson.android.recipe.Model.RecipeItem;
 import com.hanson.android.recipe.Model.SearchResultItem;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Iterator;
+
 import java.util.LinkedHashSet;
-import java.util.Map;
+
 import java.util.Set;
-import java.util.TreeMap;
+
 
 
 /**
