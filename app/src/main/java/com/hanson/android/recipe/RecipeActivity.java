@@ -49,6 +49,7 @@ public class RecipeActivity extends AppCompatActivity {
         ImageView mainImg = (ImageView)findViewById(R.id.img_recipeMainImg);
         CheckBox like = (CheckBox) findViewById(R.id.chk_recipeLike);
         Button add2cart = (Button) findViewById(R.id.btnAdd2Cart);
+        Button delRecipe = (Button) findViewById(R.id.delRecipe);
 
         //set for received data
         Intent intent = getIntent();
@@ -122,6 +123,14 @@ public class RecipeActivity extends AppCompatActivity {
                 }
                 Toast.makeText(RecipeActivity.this,"Ingredients has been added to the cart!", Toast.LENGTH_SHORT).show();
 
+            }
+        });
+
+        delRecipe.setOnClickListener(new View.OnClickListener() {
+            int recipeID = recipeItem.get_id();
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(RecipeActivity.this,"" + recipeID, Toast.LENGTH_SHORT).show();
             }
         });
 
