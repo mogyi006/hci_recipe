@@ -123,7 +123,6 @@ public class RecipeActivity extends AppCompatActivity {
                         dbHelper.shoppinglist_Insert(ingreName, "" ,"");
                     }
                 }
-
             }
         });
 

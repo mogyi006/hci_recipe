@@ -42,6 +42,14 @@ public class ShoppingCartFragment extends Fragment {
 
         listView.setAdapter(new shoppingcart_adapter(this.getContext(), shoppingList, R.layout.fragment_shoppingcart_item ));
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ShoppingCartItem selectIngredient = shoppingList.get(position);
+                Integer ID = selectIngredient.get_id();
+            }
+        });
+
         return view;
 
     }
