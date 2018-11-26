@@ -1,28 +1,17 @@
 package com.hanson.android.recipe.Helper;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 
 import com.hanson.android.recipe.Model.CategoryItem;
-import com.hanson.android.recipe.Model.RecipeIngr;
 import com.hanson.android.recipe.Model.RecipeItem;
 import com.hanson.android.recipe.Model.SearchResultItem;
 import com.hanson.android.recipe.Model.ShoppingCartItem;
-import com.hanson.android.recipe.ShoppingCartFragment;
 
-import java.io.ByteArrayOutputStream;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Date;
 
 
 public class DBHelper extends SQLiteOpenHelper
