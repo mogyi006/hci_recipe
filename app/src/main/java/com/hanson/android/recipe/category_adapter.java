@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.hanson.android.recipe.Helper.DBHelper;
 import com.hanson.android.recipe.Helper.ImageHelper;
 import com.hanson.android.recipe.Model.CategoryItem;
 

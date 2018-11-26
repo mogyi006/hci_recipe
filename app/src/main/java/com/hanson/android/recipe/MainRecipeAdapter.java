@@ -1,14 +1,11 @@
 package com.hanson.android.recipe;
 
 import android.content.Context;
-import android.database.DataSetObserver;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.hanson.android.recipe.Helper.ImageHelper;

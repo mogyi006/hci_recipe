@@ -1,19 +1,14 @@
 package com.hanson.android.recipe;
 
-
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -21,7 +16,6 @@ import com.hanson.android.recipe.Helper.DBHelper;
 import com.hanson.android.recipe.Model.ShoppingCartItem;
 
 import java.util.ArrayList;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,13 +48,11 @@ public class ShoppingCartFragment extends Fragment {
                 final Integer ID = selectIngredient.get_id();
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("Do you want to delete this item?");
+                builder.setTitle("Did you buy this?");
                 builder.setItems(new CharSequence[]
-                                {"Cancel", "OK"},
+                                {"Not yet", "YES"},
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                // The 'which' argument contains the index position
-                                // of the selected item
                                 switch (which) {
                                     case 0:
                                         break;
