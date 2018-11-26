@@ -130,7 +130,9 @@ public class RecipeActivity extends AppCompatActivity {
             int recipeID = recipeItem.get_id();
             @Override
             public void onClick(View view) {
-                Toast.makeText(RecipeActivity.this,"" + recipeID, Toast.LENGTH_SHORT).show();
+                dbHelper.recipe_Item_Delete(recipeID);
+                Toast.makeText(RecipeActivity.this,"Recipe has been deleted!", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 

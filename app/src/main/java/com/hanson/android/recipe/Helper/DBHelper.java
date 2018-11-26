@@ -127,6 +127,13 @@ public class DBHelper extends SQLiteOpenHelper
         db.close();
     }
 
+    public void recipe_Item_Delete(int _id)
+    {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM RECIPES WHERE _id = " + _id + ";");
+        db.close();
+    }
+
     // Get content of shopping cart
     public ArrayList<ShoppingCartItem> get_shoppinglist()
     {
