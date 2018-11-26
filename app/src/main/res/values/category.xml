@@ -5,5 +5,7 @@
         <item>Pasta</item>
         <item>Soup</item>
         <item>Dessert</item>
+        <item>Breakfast</item>
+        <item>Other</item>
     </string-array>
 </resources>

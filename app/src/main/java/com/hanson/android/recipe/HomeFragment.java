@@ -73,64 +73,54 @@ public class HomeFragment extends Fragment {
         ArrayList<RecipeItem> defaultDataList = dbHelper.recipes_SelectAll();
         if(defaultDataList == null || defaultDataList.size() == 0)
         {
-            //Set Bibimap data
-            Drawable drawable = getResources().getDrawable(R.drawable.bibimbap, getActivity().getTheme());
-            byte[] bibimbap = imageHelper.getByteArrayFromDrawable(drawable);
+            //Set dummy data
+            Drawable drawable = getResources().getDrawable(R.drawable.bananas, getActivity().getTheme());
+            byte[] bananas = imageHelper.getByteArrayFromDrawable(drawable);
 
-            dbHelper.recipes_Insert("Dessert", "Bibimbap",
-                    "1. rice \n 2. hubs and egg \n 3. minx", "Korean traditional food",
-                    bibimbap, bibimbap, 0);
+            dbHelper.recipes_Insert("Dessert", "Bananas in Caramel Sauce",
+                    "1. Melt butter in a large, heavy skillet over medium heat. Stir in sugar and cook, stirring, until sugar is melted and light brown. Slowly stir in the cream (mixture will bubble up). \n " +
+                            "2. Let mixture boil 1 minute, then reduce heat to low. Place the bananas in the pan and cook until heated through, about 2 minutes. Serve hot. \n",
+                    "A delicious, fast dessert. Impressive served when the sauce is still bubbling! Serve with coconut ice cream, if desired.",
+                    bananas, bananas, 0);
 
-            int bibmbapId = dbHelper.recipes_GetIdByName("Bibimbap");
-            ArrayList<String> bibmbapIngre = new ArrayList<>();
-            bibmbapIngre.add("1 kg rice");
-            bibmbapIngre.add("egg");
-            bibmbapIngre.add("1 tbs of sesame oil");
-            bibmbapIngre.add("gochujang");
-            bibmbapIngre.add("carrot");
+            int bananasId = dbHelper.recipes_GetIdByName("Bananas in Caramel Sauce");
+            ArrayList<String> bananasIngre = new ArrayList<>();
+            bananasIngre.add("0.5 cup butter");
+            bananasIngre.add("1 cup superfine sugar");
+            bananasIngre.add("0.25 cups heavy cream");
+            bananasIngre.add("4 pc bananas");
 
-            for (int i = 0; i < bibmbapIngre.size(); i++)
+            for (int i = 0; i < bananasIngre.size(); i++)
             {
-                dbHelper.ingredients_Insert(bibmbapId,bibmbapIngre.get(i));
+                dbHelper.ingredients_Insert(bananasId,bananasIngre.get(i));
             }
 
-            //Set Bulgogi data
-            drawable = getResources().getDrawable(R.drawable.bulgogi, getActivity().getTheme());
-            byte[] bulgogi = imageHelper.getByteArrayFromDrawable(drawable);
+            //Set dummy data
+            drawable = getResources().getDrawable(R.drawable.honeymch, getActivity().getTheme());
+            byte[] honeymch = imageHelper.getByteArrayFromDrawable(drawable);
 
-            dbHelper.recipes_Insert("Main Course", "Bulgogi",
-                    "1. Thinly slice 1 pound of sirloin or tenderloin beef against the grain.\n" +
-                            "2. Mix these ingredients to make a marinade:\n" +
-                            "\t 2 tbs of soy sauce\n" +
-                            "\t 3 tbs of water\n" +
-                            "\t 1 tbs of brown sugar\n" +
-                            "\t 1 tbs of honey\n" +
-                            "\t 1 tbs of sesame oil\n" +
-                            "\t 1 tbs of toasted sesame seeds\n" +
-                            "\t 2 chopped green onions\n" +
-                            "\t 4 cloves of minced garlic\n" +
-                            "\t 0.5 ts of black pepper.\n" +
-                            "3. Add the beef to the marinade and keep in the fridge at least 30 minutes. If your cut of beef is tough, you can marinate longer to soften it, or use a Korean pear in the marinade, like I do in this recipe.\n" +
-                            "4. Cook it on a pan or a grill, and transfer to a plate or a cast iron plate to serve.\n" +
-                            "5. Sprinkle chopped green onion and toasted sesame seeds over top.\n" +
-                            "6. Wrap a piece of bulgogi in a lettuce left with a little bit of ssamjang, and put it in your mouth. You can dip carrot or cucumber strips into the ssamjang.", "Korean traditional food",
-                    bulgogi, bulgogi, 1);
+            dbHelper.recipes_Insert("Main Course", "Honey Mustard Chicken",
+                    "1. Preheat oven to 350 degrees F (175 degrees C). \n" +
+                            "2. Sprinkle chicken breasts with salt and pepper to taste, and place in a lightly greased 9x13 inch baking dish. In a small bowl, combine the honey, mustard, basil, paprika, and parsley. Mix well. Pour 1/2 of this mixture over the chicken, and brush to cover. \n" +
+                            "3. Bake in the preheated oven for 30 minutes. Turn chicken pieces over and brush with the remaining 1/2 of the honey mustard mixture. Bake for an additional 10 to 15 minutes, or until chicken is no longer pink and juices run clear. Let cool 10 minutes before serving. \n",
+                    "Quick and easy to prepare, and the kids love it too!",
+                    honeymch, honeymch, 1);
 
-            int bulgogiId = dbHelper.recipes_GetIdByName("Bulgogi");
-            ArrayList<String> bulgogiIngre = new ArrayList<>();
-            bulgogiIngre.add("soy sauce");
-            bulgogiIngre.add("brown sugar");
-            bulgogiIngre.add("sesame oil");
-            bulgogiIngre.add("gochujang");
-            bulgogiIngre.add("green onion");
-            bulgogiIngre.add("onion");
+            int honeymchId = dbHelper.recipes_GetIdByName("Honey Mustard Chicken");
+            ArrayList<String> honeymchIngre = new ArrayList<>();
+            honeymchIngre.add("6 chicken breast");
+            honeymchIngre.add("1 ts dried basil");
+            honeymchIngre.add("1 ts paprika");
+            honeymchIngre.add("0.5 cup honey");
+            honeymchIngre.add("0.5 cup mustard");
+            honeymchIngre.add("0.5 ts parsley");
 
-            for (int i = 0; i < bulgogiIngre.size(); i++)
+            for (int i = 0; i < honeymchIngre.size(); i++)
             {
-                dbHelper.ingredients_Insert(bulgogiId,bulgogiIngre.get(i));
+                dbHelper.ingredients_Insert(honeymchId,honeymchIngre.get(i));
             }
 
-            //Set Bolognese data
+            //Set dummy data
             drawable = getResources().getDrawable(R.drawable.bolognese, getActivity().getTheme());
             byte[] bolognese = imageHelper.getByteArrayFromDrawable(drawable);
 
@@ -143,13 +133,13 @@ public class HomeFragment extends Fragment {
 
             int bologneseId = dbHelper.recipes_GetIdByName("Bolognese");
             ArrayList<String> bologneseIngre = new ArrayList<>();
-            bologneseIngre.add("onion");
-            bologneseIngre.add("olive oil");
+            bologneseIngre.add("4 pc onion");
+            bologneseIngre.add("1 cupolive oil");
             bologneseIngre.add("spaghetti");
-            bologneseIngre.add("Parmesan");
-            bologneseIngre.add("mushroom");
-            bologneseIngre.add("oregano");
-            bologneseIngre.add("tomatoes");
+            bologneseIngre.add("0.15 kg Parmesan");
+            bologneseIngre.add("3 pc mushroom");
+            bologneseIngre.add("0.5 ts oregano");
+            bologneseIngre.add("5 pc tomatoes");
             bologneseIngre.add("beef stock");
             bologneseIngre.add("beef");
 
@@ -158,7 +148,7 @@ public class HomeFragment extends Fragment {
                 dbHelper.ingredients_Insert(bologneseId,bologneseIngre.get(i));
             }
 
-            //Set Chicken Cacciatore data
+            //Set dummy data
             drawable = getResources().getDrawable(R.drawable.chickencacciatore, getActivity().getTheme());
             byte[] chickencacciatore = imageHelper.getByteArrayFromDrawable(drawable);
 
@@ -171,65 +161,74 @@ public class HomeFragment extends Fragment {
 
             int chickencacciatoreId = dbHelper.recipes_GetIdByName("Chicken Cacciatore ");
             ArrayList<String> chickencacciatoreIngre = new ArrayList<>();
-            chickencacciatoreIngre.add("flour");
+            chickencacciatoreIngre.add("0.25 kg flour");
             chickencacciatoreIngre.add("salt");
             chickencacciatoreIngre.add("black pepper");
-            chickencacciatoreIngre.add("chicken");
-            chickencacciatoreIngre.add("vegetable oil");
-            chickencacciatoreIngre.add("onion");
-            chickencacciatoreIngre.add("tomatoes");
-            chickencacciatoreIngre.add("oregano");
-            chickencacciatoreIngre.add("wine");
+            chickencacciatoreIngre.add("0.5 kg chicken");
+            chickencacciatoreIngre.add("1 cup vegetable oil");
+            chickencacciatoreIngre.add("2 pc onion");
+            chickencacciatoreIngre.add("4 pc tomatoes");
+            chickencacciatoreIngre.add("0.5 ts oregano");
+            chickencacciatoreIngre.add("1 bottle of wine");
 
             for (int i = 0; i < chickencacciatoreIngre.size(); i++)
             {
                 dbHelper.ingredients_Insert(chickencacciatoreId,chickencacciatoreIngre.get(i));
             }
 
-            //Set abzhorka data
-            drawable = getResources().getDrawable(R.drawable.abzhorka, getActivity().getTheme());
-            byte[] abzhorka = imageHelper.getByteArrayFromDrawable(drawable);
+            //Set dummy data
+            drawable = getResources().getDrawable(R.drawable.cookie, getActivity().getTheme());
+            byte[] cookie = imageHelper.getByteArrayFromDrawable(drawable);
 
-            dbHelper.recipes_Insert("Main Course", "Abzhorka",
-                    "1. Put the onion and oil in a large pan and fry over a fairly high heat for 3-4 mins. Add the garlic and mince and fry until they both brown. Add the mushrooms and herbs, and cook for another couple of mins.\n" +
-                            "2. Stir in the tomatoes, beef stock, tomato ketchup or purée, Worcestershire sauce and seasoning. Bring to the boil, then reduce the heat, cover and simmer, stirring occasionally, for 30 mins.\n" +
-                            "3. Meanwhile, cook the spaghetti in a large pan of boiling, salted water, according to packet instructions. Drain well, run hot water through it, put it back in the pan and add a dash of olive oil, if you like, then stir in the meat sauce. Serve in hot bowls and hand round Parmesan cheese, for sprinkling on top.",
-                    "Make our traditional spaghetti Bolognese recipe with homemade Bolognese sauce and tender chunks of beef, making this dish a family favourite.",
-                    abzhorka, abzhorka, 1);
+            dbHelper.recipes_Insert("Dessert", "Peanut Butter Cookies",
+                    "1. Preheat oven to 350 degrees F (175 degrees C). Grease cookie sheets. \n" +
+                            "2. In a medium bowl, stir peanut butter and sugar together until smooth. " +
+                            "3. Beat in the eggs, one at a time, then stir in the baking soda, salt, and vanilla. " +
+                            "4. Roll dough into 1 inch balls and place them 2 inches apart onto the prepared cookie sheets. " +
+                            "5. Press a criss-cross into the top using the back of a fork. \n" +
+                            "6. Meanwhile, cook the spaghetti in a large pan of boiling, salted water, according to packet instructions. " +
+                            "7. Drain well, run hot water through it, put it back in the pan and add a dash of olive oil, if you like, then stir in the meat sauce. " +
+                            "8. Serve in hot bowls and hand round Parmesan cheese, for sprinkling on top.",
+                    "This is an amazing no-flour peanut butter cookie. It is so easy, even kids like to make it.",
+                    cookie, cookie, 1);
 
-            int abzhorkaId = dbHelper.recipes_GetIdByName("Abzhorka");
-            ArrayList<String> abzhorkaIngre = new ArrayList<>();
-            abzhorkaIngre.add("carrot");
-            abzhorkaIngre.add("pickle");
-            abzhorkaIngre.add("onion");
-            abzhorkaIngre.add("beef");
+            int cookieId = dbHelper.recipes_GetIdByName("Peanut Butter Cookies");
+            ArrayList<String> cookieIngre = new ArrayList<>();
+            cookieIngre.add("2 cups peanut butter");
+            cookieIngre.add("2 cups white sugar");
+            cookieIngre.add("2 pc eggs");
+            cookieIngre.add("2 ts baking soda");
+            cookieIngre.add("1 pinch salt");
+            cookieIngre.add("1 ts vanilla extract");
 
-            for (int i = 0; i < abzhorkaIngre.size(); i++)
+            for (int i = 0; i < cookieIngre.size(); i++)
             {
-                dbHelper.ingredients_Insert(abzhorkaId,abzhorkaIngre.get(i));
+                dbHelper.ingredients_Insert(cookieId,cookieIngre.get(i));
             }
 
-            //Set beefstroganoff data
-            drawable = getResources().getDrawable(R.drawable.beefstroganoff, getActivity().getTheme());
-            byte[] beefstroganoff = imageHelper.getByteArrayFromDrawable(drawable);
+            //Set dummy data
+            drawable = getResources().getDrawable(R.drawable.salmon, getActivity().getTheme());
+            byte[] salmon = imageHelper.getByteArrayFromDrawable(drawable);
 
-            dbHelper.recipes_Insert("Main Course", "Beef Stroganoff",
-                    "Chop the meat long wise fibers (fibres) and beat the pieces a little. After that cut the pieces into stripes 2 cm long and 1/2 cm wide. Season and roll them in flour. Fry chopped onion in the pan and when it is gold brown, put the stripes there. Fry on hot heat until the meat is light brown. Make a sauce: fry 1 tb flour pounded with butter for few minutes, add sour cream, ketchup, salt. Pour the sauce over meat and stew on a low heat during 15-20 minutes. Don't let sauce to boil, overwise the meat will be hard. Beef Stroganoff is served with fried potatoes.\n",
-                    "Beef stroganoff is a dish consisting of strips of lean beef sauteed and served in a sour-cream sauce with onions and mushrooms. Legend has it that when he was stationed in deepest Siberia, his chef discovered that the beef was frozen so solid that it could only be coped with by cutting it into very thin strips.",
-                    beefstroganoff, beefstroganoff, 0);
+            dbHelper.recipes_Insert("Main Course", "Baked Salmon Fillets",
+                    "1. Preheat oven to 400 degrees F (200 degrees C). Line a shallow baking pan with aluminum foil.\n" +
+                            "2. Place salmon skin-side down on foil. Spread a thin layer of mustard on the top of each fillet, and season with salt and pepper. Top with bread crumbs, then drizzle with melted butter.\n" +
+                            "3. Bake in a preheated oven for 15 minutes, or until salmon flakes easily with a fork. \n" +
+                            "    Tip\n" +
+                            "    Aluminum foil can be used to keep food moist, cook it evenly, and make clean-up easier.\n",
+                    "Delicious baked salmon coated with Dijon-style mustard and seasoned bread crumbs, and topped with butter.",
+                    salmon, salmon, 0);
 
-            int beefstroganoffId = dbHelper.recipes_GetIdByName("Beef Stroganoff");
-            ArrayList<String> beefstroganoffIngre = new ArrayList<>();
-            beefstroganoffIngre.add("beef");
-            beefstroganoffIngre.add("flour");
-            beefstroganoffIngre.add("ketchup");
-            beefstroganoffIngre.add("sour cream");
-            beefstroganoffIngre.add("broth");
-            beefstroganoffIngre.add("onion");
+            int salmonId = dbHelper.recipes_GetIdByName("Baked Salmon Fillets");
+            ArrayList<String> salmonIngre = new ArrayList<>();
+            salmonIngre.add("4 ounce fillets salmon");
+            salmonIngre.add("3 ts mustard");
+            salmonIngre.add("0.25 cup bread crumbs");
+            salmonIngre.add("0.25 cup butter");
 
-            for (int i = 0; i < beefstroganoffIngre.size(); i++)
+            for (int i = 0; i < salmonIngre.size(); i++)
             {
-                dbHelper.ingredients_Insert(beefstroganoffId,beefstroganoffIngre.get(i));
+                dbHelper.ingredients_Insert(salmonId,salmonIngre.get(i));
             }
         }
 
