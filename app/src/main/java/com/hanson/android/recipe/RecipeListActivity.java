@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hanson.android.recipe.Helper.DBHelper;
 import com.hanson.android.recipe.Model.RecipeItem;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 
 public class RecipeListActivity extends AppCompatActivity {
 
-    ArrayList<RecipeItem> recipes = new ArrayList<>();;
+    ArrayList<RecipeItem> recipes = new ArrayList<>();
     //Connect with screen elements
     TextView txtTitle;
     ListView listView;

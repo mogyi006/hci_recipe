@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -56,18 +57,17 @@ public class SearchResult extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),RecipeListActivity.class);
                 //send the id of the recipes related to the position of the view clicked
                 intent.putExtra("title", "Matching: "+ Integer.toString(receiveMatchesNoDuplicates.get(positionView)) + " ingredients");
-                ArrayList<Integer> positions = new ArrayList<Integer>();
 
                 int valuePosition = receiveMatchesNoDuplicates.get(positionView); //the value of the ingredient
-                positions = findPositionIdResearch(valuePosition); //find the position that matches with the array of idRecipes called savedRecipeList
+                ArrayList<Integer> positions = findPositionIdResearch(valuePosition); //find the position that matches with the array of idRecipes called savedRecipeList
 
-                ArrayList<Integer> idtosend = new ArrayList<Integer>(); //create the array of id to send to the RecipeListActivity
+                ArrayList<Integer> idtosend = new ArrayList<>(); //create the array of id to send to the RecipeListActivity
                 for(int i=0;i<positions.size();i++){
                     idtosend.add(savedRecipeList.get(positions.get(i))); //add the value when the value of position match the value of the RecipeList saved
                 }
+
                 intent.putExtra("list",idtosend);
                 startActivity(intent);
-
             }
         });
     }
