@@ -92,11 +92,11 @@
 
         <Button
             android:id="@+id/btnAdd2Cart"
-            android:layout_width="40dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginLeft="175dp"
-            android:layout_marginTop="0dp"
-            android:text="+" />
+            android:layout_gravity="center_horizontal"
+            android:drawableRight="@drawable/ic_cart"
+            android:text="ADD TO " />
 
 
         <TextView
