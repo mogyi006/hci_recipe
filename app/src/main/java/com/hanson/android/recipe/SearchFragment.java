@@ -25,11 +25,6 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 
-
-/**
- * Pierluigi De Stasio
- * SearchFragment Subclass
- */
 public class SearchFragment extends Fragment implements View.OnClickListener {
 
     EditText editText;

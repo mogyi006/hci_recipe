@@ -13,9 +13,6 @@ import com.hanson.android.recipe.Model.RecipeItem;
 
 import java.util.ArrayList;
 
-/**
- * Created by lily on 2017-03-12.
- */
 
 public class MainRecipeAdapter extends BaseAdapter{
 

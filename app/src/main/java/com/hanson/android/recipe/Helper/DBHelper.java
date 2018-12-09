@@ -83,7 +83,7 @@ public class DBHelper extends SQLiteOpenHelper
         db.close();
     }
 
-
+    // TODO: mértékegység alapján egybevonni az itemeket! sajnos még nem jó!
     public  void  shoppinglist_Update(String ingreName, String ingreM, String ingreQ)
     {
         SQLiteDatabase db = getWritableDatabase();

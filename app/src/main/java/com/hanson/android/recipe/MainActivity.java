@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Logout();
+        //Logout();
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -37,14 +37,12 @@ public class MainActivity extends AppCompatActivity
         toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         {
-            /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
                 //getActionBar().setTitle(mTitle);
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
 
-            /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
                 //Toast.makeText(getBaseContext(), "Open", Toast.LENGTH_SHORT).show();
@@ -158,12 +156,12 @@ public class MainActivity extends AppCompatActivity
         super.onDestroy();
     }
 
-    private void Logout(){
-        //for share login information
+/*    private void Logout(){
+
         SharedPreferences pref = getSharedPreferences("Login", Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
-        //just temporary value "shyjoo"
+
         editor.clear();
         editor.commit();
-    }
+    }*/
 }

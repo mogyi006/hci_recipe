@@ -9,9 +9,6 @@ import android.provider.MediaStore;
 
 import java.io.ByteArrayOutputStream;
 
-/**
- * Created by lily on 2017-03-15.
- */
 
 public class ImageHelper
 {

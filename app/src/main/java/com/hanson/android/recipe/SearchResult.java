@@ -12,11 +12,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 
-/**
- * Pierluigi De Stasio
- * SearchResult Activity
- */
-
 public class SearchResult extends AppCompatActivity {
     ArrayList<String> listItems = new ArrayList<>();
     GridView gridView;
